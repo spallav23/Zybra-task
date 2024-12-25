@@ -9,9 +9,10 @@ A technical assessment project for the Frontend Developer - React/Next.js role a
 ---
 
 ## 📋 Table of Contents
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Submission](#submission)
+- [Getting Started](##getting-started)
+- [Installation](##installation)
+- [challenges](##challenges)
+- [Submission](##submission)
 
 ---
 
@@ -47,7 +48,10 @@ Ensure you have the following installed:
    ```
 
 ---
+## challenges 
+i used public api whitch was on http protocol. it work find on local but when i hosted it it was showing mix content Error. after some resharch i founnd one site where i can host json file with https. 
 
+---
 
 ## 📤 Submission
 
