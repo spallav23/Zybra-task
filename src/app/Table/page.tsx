@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 
-const page = () => {
+const Page = () => {
   const [cpn, setcpn] = useState(10);
   const [serch, setserch] = useState("");
   const { data, isError, isPending, error } = useQuery({ queryKey: ["todos"], queryFn: Fdata })
@@ -91,7 +91,7 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
 
 
 
