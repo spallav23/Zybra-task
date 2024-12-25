@@ -1,7 +1,7 @@
 "use client";
-import { University, columns } from "./columns"
+import { columns } from "./columns"
 import { DataTable } from "./data-table"
-import React, { useEffect } from 'react'
+import React, { useState ,useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import Fdata from '@/components/Fdata';
 import { Progress } from "@/components/ui/progress"
@@ -10,20 +10,18 @@ import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 
 const page = () => {
-  const [cpn, setcpn] = React.useState(10);
-  const [serch, setserch] = React.useState("");
+  const [cpn, setcpn] = useState(10);
+  const [serch, setserch] = useState("");
   const { data, isError, isPending, error } = useQuery({ queryKey: ["todos"], queryFn: Fdata })
-  const [dataa, setdataa] = React.useState([]);
+  const [dataa, setdataa] = useState([]);
   useEffect(() => {
     if(cpn == 0){
       setcpn(10);
@@ -73,8 +71,8 @@ const page = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="px-5">Sort</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <NavigationMenuLink className="px-5"><button onClick={()=>{data.sort((a: { name: string; }, b: { name: any; }) => a.name.localeCompare(b.name));setcpn(9)}}>Name(A-Z)</button></NavigationMenuLink>
-                <NavigationMenuLink className="px-5"><button onClick={()=>{data.sort((b: { name: any; },a: { name: string; }) => a.name.localeCompare(b.name));setcpn(9)}}>Name(Z-A)</button></NavigationMenuLink>
+                <NavigationMenuLink className="px-5"><button onClick={()=>{data.sort((a: { name: string; }, b: { name: string; }) => a.name.localeCompare(b.name));setcpn(9)}}>Name(A-Z)</button></NavigationMenuLink>
+                <NavigationMenuLink className="px-5"><button onClick={()=>{data.sort((b: { name: string; },a: { name: string; }) => a.name.localeCompare(b.name));setcpn(9)}}>Name(Z-A)</button></NavigationMenuLink>
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
