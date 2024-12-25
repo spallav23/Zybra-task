@@ -2,10 +2,8 @@
 
 
 const Fdata = async() => {
-   const res = await fetch('https://api.jsonbin.io/v3/b/676c5741e41b4d34e46b17a0')
-   const data = await res.json();
-   console.log(data);
-    return data;
+   const res = await fetch('https://api.jsonsilo.com/public/6bd3a583-628e-43a1-94e3-38f2d9bb1883')
+    return res.json();
 
 }
 
